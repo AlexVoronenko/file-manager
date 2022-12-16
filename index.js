@@ -11,6 +11,7 @@ import { listContent } from "./modules/ls.js"
 import { showContent } from "./modules/cat.js"
 import { createFile } from "./modules/add.js"
 import { renameFile } from "./modules/rn.js"
+import { osInformation } from "./modules/os.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,7 +33,7 @@ rl.on('line', async (line) => {
   let [command, ...args] = line.split(" ");
 
   console.log("arguments==> ", args);
-  getCmdArgs(line);
+  // getCmdArgs(line);
 
 
   let argString = "";
@@ -67,7 +68,9 @@ rl.on('line', async (line) => {
     case "rn":
       await renameFile(argString);
       break;
-
+    case "os":
+      await osInformation(argString);
+      break;
 
     default:
       console.log("Operation failed");

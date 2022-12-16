@@ -9,5 +9,4 @@ export const createFile = async (currentDir, fileName) => {
   } catch (error) {
     throw new Error("FS operation failed");
   }
-
 }

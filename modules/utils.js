@@ -10,28 +10,26 @@ export const getUserName = () => {
 };
 
 export const getCmdArgs = (string) => {
-  const quotes = ["'", '"'];
-  let result = [];
-  const paramString = string.split(" ");
-  let QuotParam = false;
-  let index = 0;
-  param = "";
+  // const quotes = ["'", '"'];
+  // let result = [];
+  // const paramString = string.split(" ");
+  // let QuotParam = false;
+  // let index = 0;
+  // param = "";
 
-  console.log("=cmd1=>", string);
-  console.log("=cmd2=>", string.split(" "));
+  // console.log("=cmd1=>", string);
+  // console.log("=cmd2=>", string.split(" "));
 
-  while (index < string.length) {
-
-
-    if (!QuotParam) {
-      result.push(paramString[index]);
-    } else {
-
-    }
+  // while (index < string.length) {
 
 
-    index++;
-  }
+  //   if (!QuotParam) {
+  //     result.push(paramString[index]);
+  //   } else {
+
+  //   }
 
 
+  //   index++;
+  // }
 }
