@@ -1,10 +1,9 @@
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-
 import { getUserName, getHomeDir, getCmdArgs } from "./modules/utils.js"
 
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
 import { upPath } from "./modules/up.js"
 import { cdPath } from "./modules/cd.js"
 import { listContent } from "./modules/ls.js"
@@ -12,9 +11,11 @@ import { showContent } from "./modules/cat.js"
 import { createFile } from "./modules/add.js"
 import { renameFile } from "./modules/rn.js"
 import { osInformation } from "./modules/os.js"
+import { calculateHash } from "./modules/hash.js"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 //let userName = "Username";
 let userName = getUserName();
@@ -71,6 +72,11 @@ rl.on('line', async (line) => {
     case "os":
       await osInformation(argString);
       break;
+    case "hash":
+      await calculateHash(currentDir, argString);
+      break;
+
+
 
     default:
       console.log("Operation failed");

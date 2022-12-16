@@ -5,8 +5,7 @@ import { access } from 'node:fs/promises';
 
 export const showContent = async (currentDir, fileName) => {
 
-  const pathToFile = path.join(currentDir, fileName);
-  console.log(pathToFile);
+  const pathToFile = path.resolve(currentDir, fileName);
 
   try {
     await access(pathToFile);
