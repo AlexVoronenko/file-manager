@@ -2,7 +2,6 @@ import os from 'node:os';
 
 export const osInformation = async (arg) => {
 
-  console.log(arg);
   switch (arg) {
     case "--EOL":
       console.log('\x1b[32m%s\x1b[32m', "The operating system-specific end-of-line marker: ", JSON.stringify(os.EOL));
