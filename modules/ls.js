@@ -15,7 +15,7 @@ export const listContent = async (folderName) => {
     console.table(resultForTable, tableFooter);
 
   } catch (error) {
-    throw new Error("FS operation failed");
+    console.log('\x1b[31m%s\x1b[31m', "FS operation failed");
   }
 
 }

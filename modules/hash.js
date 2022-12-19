@@ -11,8 +11,8 @@ export const calculateHash = async (currentDir, fileName) => {
     const hash = createHash("sha256");
     const fileContents = await readFile(pathToFile, { encoding: 'utf8' });
 
-    console.log(`Hash for (${fileName}): `, hash.update(fileContents).digest('hex'));
+    console.log('\x1b[32m%s\x1b[32m', `Hash for (${fileName}): `, hash.update(fileContents).digest('hex'));
   } catch (err) {
-    console.log("FS operation failed");
+    console.log('\x1b[31m%s\x1b[31m', "FS operation failed");
   }
 };

@@ -6,7 +6,8 @@ export const createFile = async (currentDir, fileName) => {
 
   try {
     await writeFile(pathToFile, "", { flag: 'wx' });;
+    console.log('\x1b[32m%s\x1b[32m', `File ${pathToFile} create sucseefully.`);
   } catch (error) {
-    throw new Error("FS operation failed");
+    console.log('\x1b[31m%s\x1b[31m', "FS operation failed");
   }
 }
